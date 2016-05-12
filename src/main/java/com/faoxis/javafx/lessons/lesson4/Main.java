@@ -19,12 +19,12 @@ public class Main extends Application {
         Button button = new Button();
         button.setText("Click me!");
 
-        Image image = new Image(getClass().getResourceAsStream("D:\\1.png"));
+/*        Image image = new Image(getClass().getResourceAsStream("D:\\1.png"));
         ImageView img = new ImageView(image);
         img.setFitWidth(40);
-        img.setFitHeight(40);
+        img.setFitHeight(40);*/
 
-        button.setGraphic(img);
+    //    button.setGraphic(img);
 
         Scene scene = new Scene(root, 400, 400);
         primaryStage.setScene(scene);
