@@ -8,6 +8,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 /**
  * Created by Sergei on 12.05.2016.
  */
@@ -19,14 +21,20 @@ public class Main extends Application {
         Button button = new Button();
         button.setText("Click me!");
 
-/*        Image image = new Image(getClass().getResourceAsStream("D:\\1.png"));
+        File file = new File("/home/sergei/1.png");
+        Image image = new Image(file.toURI().toString());
         ImageView img = new ImageView(image);
+
+      //  Image image = new Image(getClass().getResourceAsStream("/home/sergei/1.png"));
+        //ImageView img = new ImageView(image);
         img.setFitWidth(40);
-        img.setFitHeight(40);*/
+        img.setFitHeight(40);
 
-    //    button.setGraphic(img);
+        button.setGraphic(img);
 
+        root.getChildren().addAll(button);
         Scene scene = new Scene(root, 400, 400);
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }

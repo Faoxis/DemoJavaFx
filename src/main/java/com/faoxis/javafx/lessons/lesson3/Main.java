@@ -10,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 
 /**
@@ -25,13 +26,15 @@ public class Main extends Application {
         label.setText("This is a label");
 
 
-//        Image image = new Image(getClass().getResourceAsStream("1.jpg")); // метка с картинкой
-//        ImageView img = new ImageView(image);
-//        img.setFitHeight(200);
-//        img.setFitWidth(250);
+        File file = new File("/home/sergei/1.png");
+        Image image = new Image(file.toURI().toString());
+        ImageView img = new ImageView(image);
+
+        img.setFitHeight(200);
+        img.setFitWidth(250);
 
         Label labelImg = new Label();
-//        labelImg.setGraphic(img);
+        labelImg.setGraphic(img);
         labelImg.setTranslateX(75);
         labelImg.setTranslateY(100);
 
