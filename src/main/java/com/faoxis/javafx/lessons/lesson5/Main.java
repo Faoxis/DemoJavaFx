@@ -43,9 +43,18 @@ public class Main extends Application {
         rb2.setUserData("Work");
         rb3.setUserData("Rest");
 
-        ImageView img = new ImageView();
+//        ImageView img = new ImageView();
 
        // System.out.println(this.getClass().getResourceAsStream(String.valueOf(group.getSelectedToggle().getUserData())));
+        File fileHome = new File("Home.png");
+        File fileRest = new File("Rest.png");
+        File fileWork = new File("Work.png");
+
+        Image imgHome = new Image(fileHome.toURI().toString());
+        Image imgRest = new Image(fileRest.toURI().toString());
+        Image imgWork = new Image(fileWork.toURI().toString());
+
+        ImageView img = new ImageView(imgHome);
 
         group.selectedToggleProperty().addListener(event -> {
             System.out.println(this.getClass().getResourceAsStream(group.getSelectedToggle().getUserData() + ".png"));

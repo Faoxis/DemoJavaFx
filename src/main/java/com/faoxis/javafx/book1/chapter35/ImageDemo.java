@@ -33,13 +33,16 @@ public class ImageDemo extends Application {
         rootNode.setAlignment(Pos.CENTER);
 
         // Создать сцену
-        Scene myScene = new Scene(rootNode);
+        Scene myScene = new Scene(rootNode, 1400, 1000);
 
         // Установить сцену на подмостках
         myStage.setScene(myScene);
 
+        File file = new File("D:\\hour-glass.jpg");
+
         // Создать объект изображения
-        Image hourglass = new Image("hourglass.jpg");
+        Image hourglass = new Image("file:/hour-glass.jpg");
+        System.out.println(file.toURI().toString());
 
         // Создать представление этого изображения
         ImageView hourglassIV = new ImageView(hourglass);
