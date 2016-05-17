@@ -1,4 +1,4 @@
-package com.faoxis.javafx.book1;
+package com.faoxis.javafx.book1.chapter34;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 /**
  * Created by Sergei on 17.05.2016.
+ * Шилд, Java 8 - Полное руководство
  */
 public class JavaFXSkel extends Application {
     public static void main(String[] args) {
