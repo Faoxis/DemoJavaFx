@@ -46,13 +46,11 @@ public class JavaFXEventDemo extends Application {
         Button btnBeta = new Button("Beta");
 
         // Обработать события действия от кнопки Alpha
-        btnAlpha.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent ae){
-                response.setText("Alpha was pressed.");
-            }
-        });
+        // Запись в виде любда - выражения
+        btnAlpha.setOnAction(ae -> response.setText("Alpha was pressed."));
 
         // Обработать события действия от кнопки Beta
+        // Запись в виде ананимного класса
         btnBeta.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
