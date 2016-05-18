@@ -34,7 +34,7 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>com.faoxis.javafx.book1.chapter34.JavaFXEventDemo</mainClass>
+                            <mainClass>com.faoxis.javafx.book1.chapter35.ButtonImageDemo</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

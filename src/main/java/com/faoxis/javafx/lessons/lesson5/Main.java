@@ -1,6 +1,8 @@
 package com.faoxis.javafx.lessons.lesson5;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
@@ -43,23 +45,16 @@ public class Main extends Application {
         rb2.setUserData("Work");
         rb3.setUserData("Rest");
 
-//        ImageView img = new ImageView();
+        ImageView img = new ImageView();
 
-       // System.out.println(this.getClass().getResourceAsStream(String.valueOf(group.getSelectedToggle().getUserData())));
-        File fileHome = new File("Home.png");
-        File fileRest = new File("Rest.png");
-        File fileWork = new File("Work.png");
-
-        Image imgHome = new Image(fileHome.toURI().toString());
-        Image imgRest = new Image(fileRest.toURI().toString());
-        Image imgWork = new Image(fileWork.toURI().toString());
-
-        ImageView img = new ImageView(imgHome);
-
-        group.selectedToggleProperty().addListener(event -> {
-            System.out.println(this.getClass().getResourceAsStream(group.getSelectedToggle().getUserData() + ".png"));
-            img.setFitHeight(300);
+        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            RadioButton rb = (RadioButton) newValue;
+            Image image = new Image("file:./img/" + rb.getText() + ".png");
+            System.out.println("file:./" + rb.getText() + ".png");
+            img.setImage(image);
             img.setFitWidth(300);
+            img.setFitHeight(300);
+
         });
 
         rb2.setSelected(true); // Выбранная кнопка по умолчанию
